@@ -8,6 +8,7 @@ public class MainCharacterMovement : MonoBehaviour
     public float moveSpeedBase;
    // public float jumpForce;
     private Rigidbody2D player;
+    private Animator anim;
 
     public string state;
     private string air = "air";
@@ -24,20 +25,34 @@ public class MainCharacterMovement : MonoBehaviour
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         //state = floor;
     }
-
+    
     // Update is called once per frame
     void FixedUpdate() {
          
         dirX = Input.GetAxisRaw("Horizontal");
-        if(dirX > 0)
+        if(dirX < 0)
         {
             GetComponent<SpriteRenderer>().flipX = true;
+            if(anim.GetCurrentAnimatorStateInfo(0).IsName("HectorIdle"))
+            {
+                anim.SetBool("isWalking", true);
+            }
+            
         }
-        else if(dirX < 0)
+        else if(dirX > 0)
         {
             GetComponent<SpriteRenderer>().flipX = false;
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName("HectorIdle"))
+            {
+                anim.SetBool("isWalking", true);
+            }
+        }
+        else if(dirX == 0)
+        {
+            anim.SetBool("isWalking", false);
         }
         
         moveSpeed = moveSpeedBase;
@@ -63,6 +78,8 @@ public class MainCharacterMovement : MonoBehaviour
     private void KeyInputs(){
         if(Input.GetKeyDown(KeyCode.Space) && state == floor){
             isJumping = true;
+            anim.SetBool("isWalking", false);
+            anim.SetTrigger("Jump");
             player.velocity = Vector2.up * jumpForce;
             jumpTimeCounter = jumpTime;
         }
