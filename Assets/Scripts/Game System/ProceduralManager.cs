@@ -11,7 +11,7 @@ public class ProceduralManager : MonoBehaviour
     void Start()
     {
         tileGenerator = GetComponent<ProceduralGeneration>();
-        tileGenerator.Generator();
+        tileGenerator.Generator(-2, 60, 5, 15, 5);
         player = GameObject.FindGameObjectWithTag("Player");
         playerXPosition = (int)player.transform.position.x;
     }
@@ -22,6 +22,7 @@ public class ProceduralManager : MonoBehaviour
         if(player.transform.position.x - playerXPosition > 30)
         {
             playerXPosition = (int)player.transform.position.x;
+
             tileGenerator.Generator(playerXPosition + 30, playerXPosition + 60, 5, 15, 5);
             
         }
