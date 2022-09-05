@@ -12,8 +12,11 @@ public class MainCharacterMovement : MonoBehaviour
     public string state;
     private string air = "air";
     private string floor = "floor";
-
     private float jumpTimeCounter;
+    private GameObject gameManager;
+    private GameManager scriptManager;
+    private Animator anim;
+
     public float jumpTime;
     public float jumpForce;
     private bool isJumping;
@@ -24,6 +27,9 @@ public class MainCharacterMovement : MonoBehaviour
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        gameManager = GameObject.FindGameObjectWithTag("GameController");
+        scriptManager = gameManager.GetComponent<GameManager>();
         //state = floor;
     }
 
@@ -31,18 +37,34 @@ public class MainCharacterMovement : MonoBehaviour
     void FixedUpdate() {
          
         dirX = Input.GetAxisRaw("Horizontal");
-        if(dirX > 0)
+        if(dirX < 0 && !ReturnAnim())
         {
             GetComponent<SpriteRenderer>().flipX = true;
+            if(anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerIdle"))
+            {
+                anim.SetBool("isWalking", true);
+            }
+            
         }
-        else if(dirX < 0)
+        else if(dirX > 0 && !ReturnAnim())
         {
             GetComponent<SpriteRenderer>().flipX = false;
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerIdle"))
+            {
+                anim.SetBool("isWalking", true);
+            }
         }
-        
-        moveSpeed = moveSpeedBase;
-        Vector2 movement = new Vector2(dirX * moveSpeed, player.velocity.y);
-        player.velocity = movement;  
+        else if(dirX == 0)
+        {
+            anim.SetBool("isWalking", false);
+        }
+        if (!ReturnAnim())
+        {
+            moveSpeed = moveSpeedBase;
+            Vector2 movement = new Vector2(dirX * moveSpeed * scriptManager.GetKarma(), player.velocity.y);
+            player.velocity = movement;
+        }
+          
     }
     
     void Update(){
@@ -62,9 +84,15 @@ public class MainCharacterMovement : MonoBehaviour
 
     private void KeyInputs(){
         if(Input.GetKeyDown(KeyCode.Space) && state == floor){
-            isJumping = true;
-            player.velocity = Vector2.up * jumpForce;
-            jumpTimeCounter = jumpTime;
+            if (!ReturnAnim())
+            {
+                isJumping = true;
+                anim.SetBool("isWalking", false);
+                anim.SetTrigger("Jump");
+                player.velocity = Vector2.up * jumpForce;
+                jumpTimeCounter = jumpTime;
+            }
+            
         }
 
         if(Input.GetKey(KeyCode.Space) && isJumping == true){
@@ -77,6 +105,18 @@ public class MainCharacterMovement : MonoBehaviour
         }
 
         if(Input.GetKeyUp(KeyCode.Space)) isJumping = false;
+    }
+
+    private bool ReturnAnim()
+    {
+        if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("PlayerDamage"))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
 
