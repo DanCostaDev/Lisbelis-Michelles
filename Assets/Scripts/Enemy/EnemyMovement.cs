@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public float moveSpeed;
-    public GameObject player;
+    private GameObject player;
     public float nearDistance;
     public float farDistance;
 
@@ -15,6 +15,7 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
     }
 
@@ -47,9 +48,13 @@ public class EnemyMovement : MonoBehaviour
             {
                 GetComponent<SpriteRenderer>().flipX = false;
             }
-            anim.SetBool("isWalking", true);
-            Vector2 movement = new Vector2(player.transform.position.x, 0f);
-            transform.position = Vector2.MoveTowards(transform.position, movement, moveSpeed * Time.deltaTime);
+            if(!anim.GetCurrentAnimatorStateInfo(0).IsName("SkeletonTakeHit"))
+            {
+                anim.SetBool("isWalking", true);
+                Vector2 movement = new Vector2(player.transform.position.x, 0f);
+                transform.position = Vector2.MoveTowards(transform.position, movement, moveSpeed * Time.deltaTime);
+            }
+            
 
             //Vector3 movement = new Vector3(moveSpeed * direction, 0f, 0f);
             //transform.position += movement * Time.deltaTime * moveSpeed;
