@@ -84,16 +84,16 @@ public class ProceduralGeneration : MonoBehaviour
     {
         Vector3Int pos = new Vector3Int(width, height, 0);
         tileMap.SetTile(pos, obj);
-        if(Random.Range(1,20) == 1)
-        {
-            SetEnemy(pos);
-        }
+        //if(Random.Range(1,20) == 1)
+        //{
+        //    SetEnemy(pos);
+        //}
     }
 
     private void SetEnemy(Vector3Int pos)
     {
         Vector3Int multi = new Vector3Int(1, 5, 0);
         Vector3Int enemyPos = pos * multi;
-        spawnEnemy.SetEnemy(enemyPos);
+        //spawnEnemy.SetEnemy(enemyPos);
     }
 }
