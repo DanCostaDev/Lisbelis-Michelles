@@ -9,7 +9,9 @@ public class MainCharacterProperties : MonoBehaviour
     private GameObject enemy;
     private Animator anim;
 
-    public GameObject platformEnd;
+    [SerializeField] private GameObject inimigo;
+
+    //public GameObject platformEnd;
 
     // Start is called before the first frame update
     void Start()
@@ -18,10 +20,10 @@ public class MainCharacterProperties : MonoBehaviour
         hitBox = GetComponent<BoxCollider2D>();
         
         enemy = GameObject.FindGameObjectWithTag("Enemy");
-        Physics2D.IgnoreCollision(hitBox, enemy.GetComponent<BoxCollider2D>());
-        Physics2D.IgnoreCollision(hitBox, platformEnd.transform.GetChild(0).GetComponent<BoxCollider2D>());
-        Physics2D.IgnoreCollision(hitBox, platformEnd.transform.GetChild(1).GetComponent<BoxCollider2D>());
-
+        //if(enemy != null)
+        //{
+        //    Physics2D.IgnoreCollision(hitBox, enemy.GetComponent<BoxCollider2D>());
+        //}
     }
 
 
@@ -29,4 +31,12 @@ public class MainCharacterProperties : MonoBehaviour
     void Update()
     {
     }
+
+    public void TakeDamage(int value, Vector2 knockBack)
+    {
+        GetComponent<Rigidbody2D>().AddForce(knockBack, ForceMode2D.Force);
+        GetComponent<Animator>().SetBool("isWalking", false);
+        GetComponent<Animator>().SetTrigger("Damage");
+    }
+
 }
