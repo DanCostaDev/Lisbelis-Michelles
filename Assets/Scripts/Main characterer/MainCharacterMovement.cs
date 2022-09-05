@@ -36,34 +36,34 @@ public class MainCharacterMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate() {
          
-        dirX = Input.GetAxisRaw("Horizontal");
-        if(dirX < 0 && !ReturnAnim())
-        {
-            GetComponent<SpriteRenderer>().flipX = true;
-            if(anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerIdle"))
+            dirX = Input.GetAxisRaw("Horizontal");
+            if(dirX < 0 && !ReturnAnim())
             {
-                anim.SetBool("isWalking", true);
+                GetComponent<SpriteRenderer>().flipX = true;
+                if(anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerIdle") && state == floor && !anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerJump"))
+                {
+                    anim.SetBool("isWalking", true);
+                }
+                
             }
-            
-        }
-        else if(dirX > 0 && !ReturnAnim())
-        {
-            GetComponent<SpriteRenderer>().flipX = false;
-            if (anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerIdle"))
+            else if(dirX > 0 && !ReturnAnim())
             {
-                anim.SetBool("isWalking", true);
+                GetComponent<SpriteRenderer>().flipX = false;
+                if (anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerIdle") && state == floor && !anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerJump"))
+                {
+                    anim.SetBool("isWalking", true);
+                }
             }
-        }
-        else if(dirX == 0)
-        {
-            anim.SetBool("isWalking", false);
-        }
-        if (!ReturnAnim())
-        {
-            moveSpeed = moveSpeedBase;
-            Vector2 movement = new Vector2(dirX * moveSpeed * scriptManager.GetKarma(), player.velocity.y);
-            player.velocity = movement;
-        }
+            else if(dirX == 0)
+            {
+                anim.SetBool("isWalking", false);
+            }
+            if (!ReturnAnim())
+            {
+                moveSpeed = moveSpeedBase;
+                Vector2 movement = new Vector2(dirX * moveSpeed * scriptManager.GetKarma(), player.velocity.y);
+                player.velocity = movement;
+            }
           
     }
     
@@ -72,14 +72,23 @@ public class MainCharacterMovement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other) {
         
-        if(other.gameObject.tag == "Ground") state = floor;
-        
+        if(other.gameObject.tag == "Ground") {
+            state = floor;
+            anim.SetBool("isJumping", false);
+            anim.SetFloat("speedMultiplier", 1000f);
+            //Debug.Log("ENTER"); 
+        }
     }
 
     private void OnCollisionExit2D(Collision2D other) {
-        if(state == floor){
-            if(other.gameObject.tag == "Ground") state = air;
-        }
+        //if(state == floor){
+            if(other.gameObject.tag == "Ground") {
+                state = air;
+                anim.SetFloat("speedMultiplier", 1f);
+                anim.SetBool("isJumping", true);
+                //Debug.Log("EXIT"); 
+            }
+        //}
     }
 
     private void KeyInputs(){
@@ -88,7 +97,7 @@ public class MainCharacterMovement : MonoBehaviour
             {
                 isJumping = true;
                 anim.SetBool("isWalking", false);
-                anim.SetTrigger("Jump");
+                //anim.SetTrigger("Jump");
                 player.velocity = Vector2.up * jumpForce;
                 jumpTimeCounter = jumpTime;
             }
