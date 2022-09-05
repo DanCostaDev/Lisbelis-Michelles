@@ -8,15 +8,19 @@ public class ProceduralGeneration : MonoBehaviour
     //[SerializeField] private GameObject GrassTile;    
     [SerializeField] private Tile GrassTile;
     [SerializeField] private Tilemap tileMap;
+    [SerializeField] private GameObject tileMapWall;
     [SerializeField] private TilemapRenderer tileMapRenderer;
     [SerializeField] private SpawnEnemy spawnEnemy;
     [SerializeField] private int minWidth, width, height, minHeight, maxHeight, repeatNum;
+    private GameObject[] tilemapList;
     // Start is called before the first frame update
     private void Awake()
     {
         spawnEnemy = GetComponent<SpawnEnemy>();
         tileMap = GetComponentInChildren<Tilemap>();
         tileMapRenderer = GetComponentInChildren<TilemapRenderer>();
+        
+
     }
     void Start()
     {
@@ -32,10 +36,11 @@ public class ProceduralGeneration : MonoBehaviour
     public void Generator()
     {
         int repeatValue = 0;
-        for(int x = minWidth; x < width; x++)
+        for (int x = minWidth; x < width; x++)
         {
-            if(repeatValue == 0)
+            if (repeatValue == 0)
             {
+
                 height = Random.Range(minHeight, maxHeight);
                 GeneratePlatform(x);
                 repeatValue = repeatNum;
@@ -45,7 +50,6 @@ public class ProceduralGeneration : MonoBehaviour
                 GeneratePlatform(x);
                 repeatValue--;
             }
-
         }
     }
 
@@ -71,7 +75,17 @@ public class ProceduralGeneration : MonoBehaviour
 
     private void GeneratePlatform(int x)
     {
-        SpawnObj(GrassTile, x, height);
+        var ran = Random.Range(0, 20);
+        if (ran == 1)
+        {
+            //var tile = randomizerTilemap();
+            Instantiate(tileMapWall, new Vector2(x, height), Quaternion.identity);
+        }
+        else
+        {
+            SpawnObj(GrassTile, x, height);
+        }
+        
     }
 
     //private void SpawnObj(GameObject obj, int width, int height)
@@ -95,5 +109,13 @@ public class ProceduralGeneration : MonoBehaviour
         Vector3Int multi = new Vector3Int(1, 5, 0);
         Vector3Int enemyPos = pos * multi;
         //spawnEnemy.SetEnemy(enemyPos);
+    }
+
+    private GameObject randomizerTilemap()
+    {
+        Debug.Log("Wall");
+        tilemapList[0] = tileMapWall;
+        var num = Random.Range(0, tilemapList.Length - 1);
+        return tilemapList[num];
     }
 }
