@@ -78,7 +78,7 @@ public class ProceduralGeneration : MonoBehaviour
                     x += y;
                     newMinWidth += y;
                     newWidth += y;
-                    Debug.Log("REPEAT VALUE NA PAREDE= " + repeatValue);
+                    //Debug.Log("REPEAT VALUE NA PAREDE= " + repeatValue);
                 }
                 else
                 {
@@ -91,7 +91,7 @@ public class ProceduralGeneration : MonoBehaviour
                 GeneratePlatform(x, false);
                 repeatValue--;
             }
-            Debug.Log("x= " + x + " RepeatValue = " + repeatValue + " MaxWidth= " + newWidth + " NewMinWidth= " + newMinWidth + " TilemapSize= " + GetComponentInChildren<Tilemap>().size.x);
+            //Debug.Log("x= " + x + " RepeatValue = " + repeatValue + " MaxWidth= " + newWidth + " NewMinWidth= " + newMinWidth + " TilemapSize= " + GetComponentInChildren<Tilemap>().size.x);
         }
     }
 
@@ -102,7 +102,7 @@ public class ProceduralGeneration : MonoBehaviour
             //var tile = randomizerTilemap();
             Instantiate(tileMapWall, new Vector2(x+4, height), Quaternion.identity);
             minWidth = tileMapWall.GetComponentInChildren<Tilemap>().size.x - 4;
-            Debug.Log("FEZ PAREDE==========================");
+            //Debug.Log("FEZ PAREDE==========================");
             return minWidth;
         }
         else

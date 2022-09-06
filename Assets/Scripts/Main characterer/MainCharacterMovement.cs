@@ -54,7 +54,7 @@ public class MainCharacterMovement : MonoBehaviour
                     anim.SetBool("isWalking", true);
                 }
             }
-            else if(dirX == 0)
+            else if(dirX == 0)  
             {
                 anim.SetBool("isWalking", false);
             }
@@ -70,15 +70,16 @@ public class MainCharacterMovement : MonoBehaviour
     void Update(){
         KeyInputs();
     }
-    private void OnCollisionEnter2D(Collision2D other) {
+    private void OnCollisionStay2D(Collision2D other) {
         
-        if(other.gameObject.tag == "Ground") {
+        if(other.gameObject.tag == "Ground" && player.velocity.y < 1 && player.velocity.y > -1 ) {
             state = floor;
             anim.SetBool("isJumping", false);
             anim.SetFloat("speedMultiplier", 1000f);
-            //Debug.Log("ENTER"); 
+            
+            
         }
-    }
+    }   
 
     private void OnCollisionExit2D(Collision2D other) {
         //if(state == floor){
@@ -96,7 +97,9 @@ public class MainCharacterMovement : MonoBehaviour
             if (!ReturnAnim())
             {
                 isJumping = true;
+                state = air;
                 anim.SetBool("isWalking", false);
+                anim.SetBool("isJumping", true);
                 //anim.SetTrigger("Jump");
                 player.velocity = Vector2.up * jumpForce;
                 jumpTimeCounter = jumpTime;
@@ -128,8 +131,3 @@ public class MainCharacterMovement : MonoBehaviour
         }
     }
 }
-
-/*
-
-
-*/
