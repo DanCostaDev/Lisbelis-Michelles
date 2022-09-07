@@ -17,7 +17,6 @@ public class EnemyProperties : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         collisionPoint = GetComponentInChildren<Transform>();
         Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), player.GetComponent<BoxCollider2D>(), true);
-        
     }
     void Start()
     {

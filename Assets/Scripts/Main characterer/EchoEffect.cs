@@ -17,11 +17,12 @@ public class EchoEffect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(!GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("PlayerIdle"))
         {
             if(timeBtwSpawns <= 0)
             {
-                GameObject instance = (GameObject)Instantiate(echo, new Vector3 (transform.position.x, transform.position.y, 5f), Quaternion.identity);
+                GameObject instance = Instantiate(echo, new Vector3 (transform.position.x, transform.position.y, 5f), Quaternion.identity);
                 if(GetComponent<SpriteRenderer>().flipX == true)
                 {
                     instance.GetComponent<SpriteRenderer>().flipX = true;
@@ -30,7 +31,10 @@ public class EchoEffect : MonoBehaviour
                 {
                     instance.GetComponent<SpriteRenderer>().flipX = false;
                 }
-
+                if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("PlayerJump") && echo.gameObject.activeSelf)
+                {
+                    instance.GetComponent<EchoAnimation>().enabled = true;
+                }
                 Destroy(instance, 0.5f);
                 timeBtwSpawns = startTimeBtwSpawns;
             }
@@ -38,6 +42,7 @@ public class EchoEffect : MonoBehaviour
             {
                 timeBtwSpawns -= Time.deltaTime;
             }
+            
         }
         
     }

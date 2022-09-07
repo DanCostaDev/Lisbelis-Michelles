@@ -81,7 +81,6 @@ public class ProceduralGeneration : MonoBehaviour
     private void Generator(int newMinWidth, int newWidth, int newMinHeight, int newMaxHeight, int newRepeatNum)
     {
         int repeatValue = 0;
-        int y =0;
         //newMinWidth = GetComponentInChildren<Tilemap>().size.x;
         for (int x = newMinWidth; x < newWidth; x++)
         {
@@ -90,13 +89,14 @@ public class ProceduralGeneration : MonoBehaviour
                 height = Random.Range(minHeight, maxHeight);
                 GenerateTiles(x);
                 repeatValue = Random.Range(repeatNum-3, repeatNum+3);
+                SpawnEnemy(new Vector3Int(x, height, 0));
             }
             else
             {
                 GenerateTiles(x);
                 repeatValue--;
             }
-            Debug.Log("y= " + y + " x= " + x + " RepeatValue = " + repeatValue + " MaxWidth= " + newWidth + " NewMinWidth= " + newMinWidth + " TilemapSize= " + GetComponentInChildren<Tilemap>().size.x);
+            //Debug.Log("y= " + y + " x= " + x + " RepeatValue = " + repeatValue + " MaxWidth= " + newWidth + " NewMinWidth= " + newMinWidth + " TilemapSize= " + GetComponentInChildren<Tilemap>().size.x);
         }
     }
 
@@ -130,12 +130,12 @@ public class ProceduralGeneration : MonoBehaviour
         //}
     }
 
-    private void SetEnemy(Vector3Int pos)
-    {
-        Vector3Int multi = new Vector3Int(1, 5, 0);
-        Vector3Int enemyPos = pos * multi;
-        //spawnEnemy.SetEnemy(enemyPos);
-    }
+    //private void SetEnemy(Vector3Int pos)
+    //{
+    //    Vector3Int multi = new Vector3Int(1, 5, 0);
+    //    Vector3Int enemyPos = pos * multi;
+    //    //spawnEnemy.SetEnemy(enemyPos);
+    //}
 
     private GameObject randomizerTilemap()
     {
@@ -150,4 +150,16 @@ public class ProceduralGeneration : MonoBehaviour
     //    Vector3Int size = tileMapWall.GetComponentInChildren<Tilemap>().size;
 
     //}
+
+    private void SpawnEnemy(Vector3Int pos)
+    {
+        var ran = Random.Range(1, 10);
+        if(ran <= 1)
+        {
+            Vector3Int multi = new Vector3Int(1, 5, 0);
+            Vector3Int enemyPos = pos * multi;
+            spawnEnemy.SetEnemy(enemyPos);
+        }
+
+    }
 }
