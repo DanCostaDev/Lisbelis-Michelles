@@ -8,7 +8,7 @@ public class ProceduralGeneration : MonoBehaviour
     //[SerializeField] private GameObject GrassTile;    
     [SerializeField] private Tile GrassTile;
     [SerializeField] private Tilemap tileMap;
-    [SerializeField] private GameObject tileMapWall;
+    [SerializeField] private GameObject[] tileMaps;
     [SerializeField] private TilemapRenderer tileMapRenderer;
     [SerializeField] private SpawnEnemy spawnEnemy;
     [SerializeField] private int minWidth, width, height, minHeight, maxHeight, repeatNum;
@@ -61,56 +61,57 @@ public class ProceduralGeneration : MonoBehaviour
     //    }
     //}
 
-    public void Generator(int newMinWidth, int newWidth, int newMinHeight, int newMaxHeight, int newRepeatNum)
+    public int GenerateMap(int minWidth, int maxWidth, int newMinHeight, int newMaxHeight, int newRepeatNum)
+    {
+        Debug.Log("minWidth= " + minWidth + " maxWidth= " + maxWidth + " TilemapSize= " + GetComponentInChildren<Tilemap>().size.x);
+        int ranValue;
+        ranValue = Random.Range(1, 20);
+        if(ranValue <= 10)
+        {
+            Generator(minWidth, maxWidth, newMinHeight, newMaxHeight, newRepeatNum);
+            return maxWidth;
+        }
+        else
+        {
+            return minWidth + GenerateTileMap(minWidth);
+        }
+
+    }
+
+    private void Generator(int newMinWidth, int newWidth, int newMinHeight, int newMaxHeight, int newRepeatNum)
     {
         int repeatValue = 0;
-        int y;
-        newMinWidth = GetComponentInChildren<Tilemap>().size.x;
+        int y =0;
+        //newMinWidth = GetComponentInChildren<Tilemap>().size.x;
         for (int x = newMinWidth; x < newWidth; x++)
         {
             if (repeatValue == 0)
             {
                 height = Random.Range(minHeight, maxHeight);
-                var ran = Random.Range(0, 20);
-                if (ran == 1)
-                {
-                    y = GeneratePlatform(x, true) -1;
-                    x += y;
-                    newMinWidth += y;
-                    newWidth += y;
-                    //Debug.Log("REPEAT VALUE NA PAREDE= " + repeatValue);
-                }
-                else
-                {
-                    GeneratePlatform(x, false);
-                }
+                GenerateTiles(x);
                 repeatValue = Random.Range(repeatNum-3, repeatNum+3);
             }
             else
             {
-                GeneratePlatform(x, false);
+                GenerateTiles(x);
                 repeatValue--;
             }
-            //Debug.Log("x= " + x + " RepeatValue = " + repeatValue + " MaxWidth= " + newWidth + " NewMinWidth= " + newMinWidth + " TilemapSize= " + GetComponentInChildren<Tilemap>().size.x);
+            Debug.Log("y= " + y + " x= " + x + " RepeatValue = " + repeatValue + " MaxWidth= " + newWidth + " NewMinWidth= " + newMinWidth + " TilemapSize= " + GetComponentInChildren<Tilemap>().size.x);
         }
     }
 
-    private int GeneratePlatform(int x, bool isTilemap)
+    private void GenerateTiles(int x)
     {
-        if (isTilemap)
-        {
-            //var tile = randomizerTilemap();
-            Instantiate(tileMapWall, new Vector2(x+4, height), Quaternion.identity);
-            minWidth = tileMapWall.GetComponentInChildren<Tilemap>().size.x - 4;
-            //Debug.Log("FEZ PAREDE==========================");
-            return minWidth;
-        }
-        else
-        {
-            SpawnObj(GrassTile, x, height);
-            return 0;
-        }
+        SpawnObj(GrassTile, x, height);
+    }
 
+    private int GenerateTileMap(int x)
+    {
+        var tileMap = randomizerTilemap();
+        Instantiate(tileMap, new Vector2(x, height), Quaternion.identity);
+        var tilemapSize = tileMap.GetComponentInChildren<Tilemap>().size.x;
+        Debug.Log("TILEMAP SIZE = " + tilemapSize + " GAME OBJECT POSITION: " + tileMap.transform.position + " X= " + x);
+        return tilemapSize;
     }
 
     //private void SpawnObj(GameObject obj, int width, int height)
@@ -138,15 +139,15 @@ public class ProceduralGeneration : MonoBehaviour
 
     private GameObject randomizerTilemap()
     {
-        tilemapList[0] = tileMapWall;
-        var num = Random.Range(0, tilemapList.Length - 1);
-        return tilemapList[num];
+        var num = Random.Range(0, tileMaps.Length);
+        Debug.Log("TILEMAP==========" + tileMaps[num]);
+        return tileMaps[num];
     }
 
-    private void GenerateTileMap()
-    {
-        Vector3Int origin = tileMapWall.GetComponentInChildren<Tilemap>().origin;
-        Vector3Int size = tileMapWall.GetComponentInChildren<Tilemap>().size;
+    //private void GenerateTileMap()
+    //{
+    //    Vector3Int origin = tileMapWall.GetComponentInChildren<Tilemap>().origin;
+    //    Vector3Int size = tileMapWall.GetComponentInChildren<Tilemap>().size;
 
-    }
+    //}
 }
