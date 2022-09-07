@@ -1,0 +1,1002 @@
+fileFormatVersion: 2
+guid: 95dad30fa40c105449725e866d9c03b1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 24
+        width: 105
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ea0e5b7170dc394eb506a4d868bdbeb
+      internalID: 1870397762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 24
+        width: 102
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382ccc05935e3564390833486f970805
+      internalID: -562081945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 24
+        width: 112
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c732bba1a5369148858c9bf5ddce175
+      internalID: 1316125904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 24
+        width: 105
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7453634307b12e846a935d7555c05a63
+      internalID: -691380896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 24
+        width: 103
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d78e5678061d3214180a89a86602d2a6
+      internalID: -1404667534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 24
+        width: 102
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b42b7bad96cb654e98ccb1ae6fa3bd3
+      internalID: 340720509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 24
+        width: 112
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be06181340813494aa416fef03b21f8b
+      internalID: 763227953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 24
+        width: 114
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc68e3a601c633a42b41c864e51ebf5f
+      internalID: 5870792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 24
+        width: 108
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 279215f684df006499cabb322b7e66f7
+      internalID: -382711275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 24
+        width: 100
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c2187e576ff65445a7587c043d27871
+      internalID: 1818974523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 1512
+        y: 24
+        width: 105
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c2baa4ba51ef74cb279fd875858e32
+      internalID: -1823255702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 24
+        width: 102
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f03e2e2918bd2449f0bb8d5fa42d20
+      internalID: -1591668007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 24
+        width: 112
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fdef4bf5194e824b8e0c6e12bf6b513
+      internalID: -1301984351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 1966
+        y: 24
+        width: 105
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc91fc6208923394a8ee98e3f053f093
+      internalID: 751008070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 2115
+        y: 24
+        width: 103
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e4259e047e0ed14690c9e92b316d9f6
+      internalID: 1278098831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 2262
+        y: 24
+        width: 102
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b3a22641705e8248a53dedc59bc3dbd
+      internalID: -515498960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 2405
+        y: 24
+        width: 112
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 903bc0588cefc7240bb1382ece589e64
+      internalID: 1620978553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 2552
+        y: 24
+        width: 114
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df5b4e5dc74373e4ca834f5e8af830c5
+      internalID: -1881784255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 2707
+        y: 24
+        width: 108
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e75b3ce597c2d2d4982534ce9d52d993
+      internalID: -227310325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 2865
+        y: 24
+        width: 100
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a50147f7ca2f029438982f94122ccc66
+      internalID: 1765542336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 3012
+        y: 24
+        width: 105
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc4e8982fa9f5924082f5c53da687ee4
+      internalID: 1447001926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 3170
+        y: 24
+        width: 102
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8843108aa9bcd9e49be753b191ddbca8
+      internalID: -431316914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 3316
+        y: 24
+        width: 112
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e45f4edc526f33c4881d2f3a60ccd6ee
+      internalID: 772012853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 3466
+        y: 24
+        width: 105
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f90b689276d6254f98e6037f310d0a3
+      internalID: 1568756691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 3615
+        y: 24
+        width: 103
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e1aa5b4496c544fb7c6905059d9621
+      internalID: -937057885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 3762
+        y: 24
+        width: 102
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2f0632430115f4bbec428cff557bde
+      internalID: -558273442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 3905
+        y: 24
+        width: 112
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a459c49fb95cec44ac3449957e456a8
+      internalID: 2089651130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 4052
+        y: 24
+        width: 114
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f34f8df2adfb91e419ad04d71b4bde22
+      internalID: -1426084923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 4207
+        y: 24
+        width: 108
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7adb4a4356dfc104eb9043e170948502
+      internalID: 2086401631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 4365
+        y: 24
+        width: 100
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bc096e69fd53ae43a16efd9b34dfe17
+      internalID: 453323152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 4512
+        y: 24
+        width: 105
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ead879962fbf7c04295cd4c60b655055
+      internalID: 622287678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 4670
+        y: 24
+        width: 102
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1137a9712a6bfe408d8edd6e2f2dfab
+      internalID: 1874278289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 4816
+        y: 24
+        width: 112
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f6996a359537854a9a4c9d4f072ce24
+      internalID: 1005755363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 4966
+        y: 24
+        width: 105
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0714c18f88e11244a3de6a7919f4b9b
+      internalID: 1327896878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 5115
+        y: 24
+        width: 103
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb893b3db7ebf424ebe1e6783530ef07
+      internalID: 195647441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 5262
+        y: 24
+        width: 102
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d10a0baee823d1a439c1d189c9322c45
+      internalID: 2101943460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 5405
+        y: 24
+        width: 112
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b984bc9a6125224b8199e64bc9af78d
+      internalID: 1038514194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 5552
+        y: 24
+        width: 114
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 007ee8985d064ba469fdee5f1db61ce1
+      internalID: -51242678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 5707
+        y: 24
+        width: 108
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b06b0239ef3de14c8be2795f91f3051
+      internalID: -714949974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalkSpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 5865
+        y: 24
+        width: 100
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9d76b70a0674764d84329f9764b7504
+      internalID: -1810542513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      MonsterWalkSpriteSheet_20: 1447001926
+      MonsterWalkSpriteSheet_16: 1620978553
+      MonsterWalkSpriteSheet_31: 1874278289
+      MonsterWalkSpriteSheet_33: 1327896878
+      MonsterWalkSpriteSheet_3: -691380896
+      MonsterWalkSpriteSheet_12: -1301984351
+      MonsterWalkSpriteSheet_39: -1810542513
+      MonsterWalkSpriteSheet_35: 2101943460
+      MonsterWalkSpriteSheet_15: -515498960
+      MonsterWalkSpriteSheet_17: -1881784255
+      MonsterWalkSpriteSheet_10: -1823255702
+      MonsterWalkSpriteSheet_7: 5870792
+      MonsterWalkSpriteSheet_36: 1038514194
+      MonsterWalkSpriteSheet_19: 1765542336
+      MonsterWalkSpriteSheet_29: 453323152
+      MonsterWalkSpriteSheet_4: -1404667534
+      MonsterWalkSpriteSheet_5: 340720509
+      MonsterWalkSpriteSheet_23: 1568756691
+      MonsterWalkSpriteSheet_21: -431316914
+      MonsterWalkSpriteSheet_11: -1591668007
+      MonsterWalkSpriteSheet_9: 1818974523
+      MonsterWalkSpriteSheet_14: 1278098831
+      MonsterWalkSpriteSheet_27: -1426084923
+      MonsterWalkSpriteSheet_25: -558273442
+      MonsterWalkSpriteSheet_24: -937057885
+      MonsterWalkSpriteSheet_37: -51242678
+      MonsterWalkSpriteSheet_26: 2089651130
+      MonsterWalkSpriteSheet_32: 1005755363
+      MonsterWalkSpriteSheet_30: 622287678
+      MonsterWalkSpriteSheet_38: -714949974
+      MonsterWalkSpriteSheet_2: 1316125904
+      MonsterWalkSpriteSheet_22: 772012853
+      MonsterWalkSpriteSheet_8: -382711275
+      MonsterWalkSpriteSheet_18: -227310325
+      MonsterWalkSpriteSheet_0: 1870397762
+      MonsterWalkSpriteSheet_1: -562081945
+      MonsterWalkSpriteSheet_34: 195647441
+      MonsterWalkSpriteSheet_13: 751008070
+      MonsterWalkSpriteSheet_28: 2086401631
+      MonsterWalkSpriteSheet_6: 763227953
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -6,12 +6,13 @@ public class ProceduralManager : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private int playerXPosition;
+    [SerializeField] private int lastWidthPos = -2;
     private ProceduralGeneration tileGenerator;
     // Start is called before the first frame update
     void Start()
     {
         tileGenerator = GetComponent<ProceduralGeneration>();
-        tileGenerator.Generator(-2, 60, 5, 15, 5);
+        lastWidthPos = tileGenerator.GenerateMap(-2, 90, 5, 15, 5);
         player = GameObject.FindGameObjectWithTag("Player");
         playerXPosition = (int)player.transform.position.x;
     }
@@ -23,8 +24,7 @@ public class ProceduralManager : MonoBehaviour
         {
             playerXPosition = (int)player.transform.position.x;
 
-            tileGenerator.Generator(playerXPosition + 30, playerXPosition + 60, 5, 15, 5);
-            
+            lastWidthPos = tileGenerator.GenerateMap(lastWidthPos, lastWidthPos + 90, 5, 15, 5);
         }
     }
 }
