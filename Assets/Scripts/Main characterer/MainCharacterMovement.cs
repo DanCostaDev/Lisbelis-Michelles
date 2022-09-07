@@ -22,10 +22,12 @@ public class MainCharacterMovement : MonoBehaviour
     private bool isJumping;
     public float moveSpeed;
     private float moveInput;
+    private Vector3 oldPos;
 
     // Start is called before the first frame update
     void Start()
     {
+        oldPos = transform.position;
         player = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         gameManager = GameObject.FindGameObjectWithTag("GameController");
@@ -35,36 +37,52 @@ public class MainCharacterMovement : MonoBehaviour
 
     // Update is called once per frame
     void FixedUpdate() {
-         
-            dirX = Input.GetAxisRaw("Horizontal");
-            if(dirX < 0 && !ReturnAnim())
+        dirX = Input.GetAxisRaw("Horizontal");
+        if (scriptManager.GetKarma() >= 3)
+        {
+            GetComponent<EchoEffect>().enabled = true;
+            if (IsMovingRight())
             {
-                GetComponent<SpriteRenderer>().flipX = true;
-                if(anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerIdle") && state == floor && !anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerJump"))
-                {
-                    anim.SetBool("isWalking", true);
-                }
+                transform.GetChild(0).gameObject.active = true;
+            }
+            else
+            {
+                transform.GetChild(0).gameObject.active = false;
+            }
+        }
+        else
+        {
+            transform.GetChild(0).gameObject.active = false;
+            GetComponent<EchoEffect>().enabled = false;
+        }
+            
+        if(dirX < 0 && !ReturnAnim())
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+            if(anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerIdle") && state == floor && !anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerJump"))
+            {
+                anim.SetBool("isWalking", true);
+            }
                 
-            }
-            else if(dirX > 0 && !ReturnAnim())
+        }
+        else if(dirX > 0 && !ReturnAnim())
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerIdle") && state == floor && !anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerJump"))
             {
-                GetComponent<SpriteRenderer>().flipX = false;
-                if (anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerIdle") && state == floor && !anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerJump"))
-                {
-                    anim.SetBool("isWalking", true);
-                }
+                anim.SetBool("isWalking", true);
             }
-            else if(dirX == 0)  
-            {
-                anim.SetBool("isWalking", false);
-            }
-            if (!ReturnAnim())
-            {
-                moveSpeed = moveSpeedBase;
-                Vector2 movement = new Vector2(dirX * moveSpeed * scriptManager.GetKarma(), player.velocity.y);
-                player.velocity = movement;
-            }
-          
+        }
+        else if(dirX == 0)  
+        {
+            anim.SetBool("isWalking", false);
+        }
+        if (!ReturnAnim())
+        {
+            moveSpeed = moveSpeedBase;
+            Vector2 movement = new Vector2(dirX * moveSpeed * scriptManager.GetKarma(), player.velocity.y);
+            player.velocity = movement;
+        }
     }
     
     void Update(){
@@ -127,6 +145,20 @@ public class MainCharacterMovement : MonoBehaviour
         }
         else
         {
+            return false;
+        }
+    }
+
+    private bool IsMovingRight()
+    {
+        if (oldPos.x < transform.position.x)
+        {
+            oldPos = transform.position;
+            return true;
+        }
+        else
+        {
+            oldPos = transform.position;
             return false;
         }
     }
