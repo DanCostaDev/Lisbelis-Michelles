@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class MainCharacterMovement : MonoBehaviour
 {
@@ -22,6 +24,9 @@ public class MainCharacterMovement : MonoBehaviour
     private bool isJumping;
     public float moveSpeed;
     private float moveInput;
+    public Text txtPoints;
+    public int points;
+    private float previusX;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +35,8 @@ public class MainCharacterMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         gameManager = GameObject.FindGameObjectWithTag("GameController");
         scriptManager = gameManager.GetComponent<GameManager>();
+        points = 0;
+        previusX = player.position.x;
         //state = floor;
     }
 
@@ -69,6 +76,7 @@ public class MainCharacterMovement : MonoBehaviour
     
     void Update(){
         KeyInputs();
+        countPoints();
     }
     private void OnCollisionStay2D(Collision2D other) {
         
@@ -129,5 +137,15 @@ public class MainCharacterMovement : MonoBehaviour
         {
             return false;
         }
+    }
+    private void countPoints(){
+        float x;
+        if(player.position.x > previusX){
+            previusX = player.position.x;
+            x = previusX / 10;
+            points = (int) x;
+            txtPoints.text = "Pontos: " + points.ToString();
+        }
+        
     }
 }
