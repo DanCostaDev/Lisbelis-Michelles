@@ -54,16 +54,16 @@ public class MainCharacterMovement : MonoBehaviour
             GetComponent<EchoEffect>().enabled = true;
             if (IsMovingRight())
             {
-                transform.GetChild(0).gameObject.active = true;
+                transform.GetChild(0).gameObject.SetActive(true);
             }
             else
             {
-                transform.GetChild(0).gameObject.active = false;
+                transform.GetChild(0).gameObject.SetActive(false);
             }
         }
         else
         {
-            transform.GetChild(0).gameObject.active = false;
+            transform.GetChild(0).gameObject.SetActive(false);
             GetComponent<EchoEffect>().enabled = false;
         }
             
@@ -176,6 +176,7 @@ public class MainCharacterMovement : MonoBehaviour
             oldPos = transform.position;
             return false;
         }
+    }
 
     private void countPoints(){
         float x;
