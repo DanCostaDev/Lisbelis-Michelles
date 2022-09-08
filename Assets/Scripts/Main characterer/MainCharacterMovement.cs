@@ -176,7 +176,7 @@ public class MainCharacterMovement : MonoBehaviour
             oldPos = transform.position;
             return false;
         }
-
+    }
     private void countPoints(){
         float x;
         if(player.position.x > previusX){
