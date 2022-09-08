@@ -1,7 +1,11 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1682914119847323973
+=======
+--- !u!1 &1915026316742709177
+>>>>>>> c79fa57ae947b21dd394357e1787bfa4c8791334
 =======
 --- !u!1 &1915026316742709177
 >>>>>>> c79fa57ae947b21dd394357e1787bfa4c8791334
@@ -13,7 +17,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - component: {fileID: 198266575660936542}
+=======
+  - component: {fileID: 983919438251002431}
+>>>>>>> c79fa57ae947b21dd394357e1787bfa4c8791334
 =======
   - component: {fileID: 983919438251002431}
 >>>>>>> c79fa57ae947b21dd394357e1787bfa4c8791334
@@ -25,7 +33,11 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!4 &198266575660936542
+=======
+--- !u!4 &983919438251002431
+>>>>>>> c79fa57ae947b21dd394357e1787bfa4c8791334
 =======
 --- !u!4 &983919438251002431
 >>>>>>> c79fa57ae947b21dd394357e1787bfa4c8791334
@@ -35,9 +47,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 1682914119847323973}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.41, y: -0.13, z: 0}
+=======
+  m_GameObject: {fileID: 1915026316742709177}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.46, y: 0.87, z: 0}
+>>>>>>> c79fa57ae947b21dd394357e1787bfa4c8791334
 =======
   m_GameObject: {fileID: 1915026316742709177}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
@@ -84,7 +102,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 198266575660936542}
+=======
+  - {fileID: 983919438251002431}
+>>>>>>> c79fa57ae947b21dd394357e1787bfa4c8791334
 =======
   - {fileID: 983919438251002431}
 >>>>>>> c79fa57ae947b21dd394357e1787bfa4c8791334
@@ -238,8 +260,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
   collisionPoint: {fileID: 198266575660936542}
   collisionRange: 1.86
+=======
+  collisionPoint: {fileID: 983919438251002431}
+  collisionRange: 1.66
+>>>>>>> c79fa57ae947b21dd394357e1787bfa4c8791334
 =======
   collisionPoint: {fileID: 983919438251002431}
   collisionRange: 1.66
