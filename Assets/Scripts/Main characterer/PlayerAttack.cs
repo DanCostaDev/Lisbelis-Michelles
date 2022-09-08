@@ -31,7 +31,7 @@ public class PlayerAttack : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 if (!GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("PlayerDamage"))
-                {
+                {                    
                     Attack();
                     nextAttackTime = Time.time + 1f / (attackRate + scriptManager.GetKarma());
                 }
@@ -45,6 +45,8 @@ public class PlayerAttack : MonoBehaviour
     private void Attack()
     {
         Collider2D[] hitEnemies;
+        anim.SetBool("isJumping", false);
+        anim.SetBool("isWalking", false);
         anim.SetTrigger("Attack");
         if (GetComponent<SpriteRenderer>().flipX)
         {
@@ -65,10 +67,10 @@ public class PlayerAttack : MonoBehaviour
 
     }
 
-    //void OnDrawGizmosSelected()
-    //{
-    //    if (attackPoint == null)
-    //        return;
-    //    Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-    //}
+    void OnDrawGizmosSelected()
+    {
+        if (attackPointRight == null)
+            return;
+        Gizmos.DrawWireSphere(attackPointRight.position, attackRange);
+    }
 }

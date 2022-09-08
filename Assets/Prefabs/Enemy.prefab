@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 983919438251002431}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CollisionPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 4957633211603320651}
   - component: {fileID: 4957633211603320649}
   - component: {fileID: 5830649842574882515}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
