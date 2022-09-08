@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MainCharacterMovement : MonoBehaviour
 {
@@ -22,7 +25,12 @@ public class MainCharacterMovement : MonoBehaviour
     private bool isJumping;
     public float moveSpeed;
     private float moveInput;
+
     private Vector3 oldPos;
+    public Text txtPoints;
+    public int points;
+    private float previusX;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +40,9 @@ public class MainCharacterMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         gameManager = GameObject.FindGameObjectWithTag("GameController");
         scriptManager = gameManager.GetComponent<GameManager>();
+        points = 0;
+        previusX = player.position.x;
+        PlayerPrefs.SetInt("teste", 10);
         //state = floor;
     }
 
@@ -87,6 +98,10 @@ public class MainCharacterMovement : MonoBehaviour
     
     void Update(){
         KeyInputs();
+        countPoints();
+        if(player.position.y < -50){
+            DeadPlayer();
+        }
     }
     private void OnCollisionStay2D(Collision2D other) {
         
@@ -161,5 +176,29 @@ public class MainCharacterMovement : MonoBehaviour
             oldPos = transform.position;
             return false;
         }
+
+    private void countPoints(){
+        float x;
+        if(player.position.x > previusX){
+            previusX = player.position.x;
+            x = previusX / 10;
+            points = (int) x;
+            txtPoints.text = "Pontos: " + points.ToString();
+        }
+        
+    }
+
+    private void DeadPlayer(){
+        if(PlayerPrefs.HasKey("points")){
+            if(PlayerPrefs.GetInt("points") < points){
+                PlayerPrefs.SetInt("points", points);
+            }
+        } else {
+            PlayerPrefs.SetInt("points", points);
+        }
+        PlayerPrefs.Save();
+
+        SceneManager.LoadScene("Menu");
+
     }
 }
