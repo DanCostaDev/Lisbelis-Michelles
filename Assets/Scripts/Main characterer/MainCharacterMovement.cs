@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MainCharacterMovement : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class MainCharacterMovement : MonoBehaviour
         scriptManager = gameManager.GetComponent<GameManager>();
         points = 0;
         previusX = player.position.x;
+        PlayerPrefs.SetInt("teste", 10);
         //state = floor;
     }
 
@@ -77,6 +79,9 @@ public class MainCharacterMovement : MonoBehaviour
     void Update(){
         KeyInputs();
         countPoints();
+        if(player.position.y < -50){
+            DeadPlayer();
+        }
     }
     private void OnCollisionStay2D(Collision2D other) {
         
@@ -147,5 +152,19 @@ public class MainCharacterMovement : MonoBehaviour
             txtPoints.text = "Pontos: " + points.ToString();
         }
         
+    }
+
+    private void DeadPlayer(){
+        if(PlayerPrefs.HasKey("points")){
+            if(PlayerPrefs.GetInt("points") < points){
+                PlayerPrefs.SetInt("points", points);
+            }
+        } else {
+            PlayerPrefs.SetInt("points", points);
+        }
+        PlayerPrefs.Save();
+
+        SceneManager.LoadScene("Menu");
+
     }
 }
