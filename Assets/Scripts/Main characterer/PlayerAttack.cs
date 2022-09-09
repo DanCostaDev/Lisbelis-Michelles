@@ -35,11 +35,8 @@ public class PlayerAttack : MonoBehaviour
                     Attack();
                     nextAttackTime = Time.time + 1f / (attackRate + scriptManager.GetKarma());
                 }
-                
             }
-
         }
-        
     }
 
     private void Attack()
@@ -62,7 +59,7 @@ public class PlayerAttack : MonoBehaviour
         {
             scriptManager.increaseKarma(0.1f);
             enemy.GetComponent<EnemyProperties>().TakeDamage(1);
-            Debug.Log("Hit " + enemy.name);
+            Debug.Log("Hit enemy");
         }
 
     }
@@ -72,5 +69,6 @@ public class PlayerAttack : MonoBehaviour
         if (attackPointRight == null)
             return;
         Gizmos.DrawWireSphere(attackPointRight.position, attackRange);
+        Gizmos.DrawWireSphere(attackPointLeft.position, attackRange);
     }
 }
