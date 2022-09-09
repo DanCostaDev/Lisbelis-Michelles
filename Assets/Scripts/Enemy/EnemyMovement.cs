@@ -38,27 +38,26 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(transform.position, player.transform.position) < farDistance && Vector3.Distance(transform.position, player.transform.position) > nearDistance)
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("SkeletonTakeHit"))
         {
-            if(player.transform.position.x < transform.position.x)
+            if (Vector3.Distance(transform.position, player.transform.position) < farDistance && Vector3.Distance(transform.position, player.transform.position) > nearDistance)
             {
-                GetComponent<SpriteRenderer>().flipX = true;
-            }
-            else
-            {
-                GetComponent<SpriteRenderer>().flipX = false;
-            }
-            if(!anim.GetCurrentAnimatorStateInfo(0).IsName("SkeletonTakeHit"))
-            {
+                if (player.transform.position.x < transform.position.x)
+                {
+                    GetComponent<SpriteRenderer>().flipX = true;
+                }
+                else
+                {
+                    GetComponent<SpriteRenderer>().flipX = false;
+                }
                 anim.SetBool("isWalking", true);
                 Vector2 movement = new Vector2(player.transform.position.x, 0f);
                 transform.position = Vector2.MoveTowards(transform.position, movement, moveSpeed * Time.deltaTime);
             }
-            
 
+        }
             //Vector3 movement = new Vector3(moveSpeed * direction, 0f, 0f);
             //transform.position += movement * Time.deltaTime * moveSpeed;
-        }
         else
         {
             anim.SetBool("isWalking", false);

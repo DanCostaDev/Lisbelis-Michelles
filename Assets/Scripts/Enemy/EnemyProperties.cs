@@ -6,6 +6,7 @@ public class EnemyProperties : MonoBehaviour
 {
     private GameObject player;
     public Transform collisionPoint;
+    [SerializeField] private int health = 2;
     [SerializeField] private float collisionRange = 2.2f;
     [SerializeField] private Collider2D[] colliderPlayer;
 
@@ -55,6 +56,20 @@ public class EnemyProperties : MonoBehaviour
     {
         GetComponent<Animator>().SetBool("isWalking", false);
         GetComponent<Animator>().SetTrigger("Damage");
+        GetComponent<Rigidbody2D>().AddForce(new Vector2(20, 1));
+        health -= value;
+        if(health == 0)
+        {
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<EnemyMovement>().enabled = false;
+            GetComponent<Animator>().SetTrigger("Death");
+        }
+    }
+
+    public void Death()
+    {
+        Destroy(gameObject);
     }
 
     private void OnDrawGizmosSelected()
