@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour
     {
         return karma;
     }
+    public float GetMaxKarma(){
+        return maxKarma;
+    }
 
     public void increaseKarma(float value)
     {
