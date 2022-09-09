@@ -43,7 +43,7 @@ public class EnemyProperties : MonoBehaviour
                 if (Time.time > nextAttackTime)
                 {
                     Vector2 difference = (playerCollider.transform.position - gameObject.transform.GetChild(0).transform.position).normalized;
-                    Vector2 force = difference * 5f;
+                    Vector2 force = difference * 50f;
                     Debug.Log("player entrou");
                     player.GetComponent<MainCharacterProperties>().TakeDamage(1, force);
                     nextAttackTime = Time.time + 2f / (attackRate);
@@ -64,6 +64,7 @@ public class EnemyProperties : MonoBehaviour
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<EnemyMovement>().enabled = false;
             GetComponent<Animator>().SetTrigger("Death");
+            Death();
         }
     }
 

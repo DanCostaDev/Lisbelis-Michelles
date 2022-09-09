@@ -57,7 +57,7 @@ public class PlayerAttack : MonoBehaviour
 
         foreach(Collider2D enemy in hitEnemies)
         {
-            scriptManager.increaseKarma(0.1f);
+            scriptManager.increaseKarma(1f);
             enemy.GetComponent<EnemyProperties>().TakeDamage(1);
             Debug.Log("Hit enemy");
         }

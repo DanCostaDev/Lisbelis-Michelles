@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MainCharacterProperties : MonoBehaviour
 {
     private Rigidbody2D player;
@@ -9,7 +10,17 @@ public class MainCharacterProperties : MonoBehaviour
     private GameObject enemy;
     private Animator anim;
 
+    [SerializeField] private float maxLife;
+    
+    [SerializeField] private float life;
+
+    private int intPart;
+
+    public HealthBar healthBar;
+
     [SerializeField] private GameObject inimigo;
+
+    public MainCharacterMovement mainCharacter;
 
     //public GameObject platformEnd;
 
@@ -20,6 +31,10 @@ public class MainCharacterProperties : MonoBehaviour
         hitBox = GetComponent<BoxCollider2D>();
         
         enemy = GameObject.FindGameObjectWithTag("Enemy");
+        life = maxLife;
+        intPart = (int) life;
+        healthBar.SetMaxHealth(intPart);
+        healthBar.SetHealth(intPart);
         //if(enemy != null)
         //{
         //    Physics2D.IgnoreCollision(hitBox, enemy.GetComponent<BoxCollider2D>());
@@ -37,6 +52,13 @@ public class MainCharacterProperties : MonoBehaviour
         GetComponent<Rigidbody2D>().AddForce(knockBack, ForceMode2D.Force);
         GetComponent<Animator>().SetBool("isWalking", false);
         GetComponent<Animator>().SetTrigger("Damage");
+
+        life = life - value;
+        intPart = (int) life;
+        healthBar.SetHealth(intPart);
+        if(life <= 0){
+            mainCharacter.DeadPlayer();
+        }
     }
 
 }

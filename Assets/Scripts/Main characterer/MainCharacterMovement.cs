@@ -189,7 +189,7 @@ public class MainCharacterMovement : MonoBehaviour
         
     }
 
-    private void DeadPlayer(){
+    public void DeadPlayer(){
         if(PlayerPrefs.HasKey("points")){
             if(PlayerPrefs.GetInt("points") < points){
                 PlayerPrefs.SetInt("points", points);
