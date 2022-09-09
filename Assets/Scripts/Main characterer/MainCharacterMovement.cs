@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
-using UnityEngine.SceneManagement;
+
 
 public class MainCharacterMovement : MonoBehaviour
 {
@@ -23,13 +21,12 @@ public class MainCharacterMovement : MonoBehaviour
     public float jumpTime;
     public float jumpForce;
     private bool isJumping;
+    private bool doubleJump;
     public float moveSpeed;
+    public float maxMoveSpeed;
     private float moveInput;
 
     private Vector3 oldPos;
-    public Text txtPoints;
-    public int points;
-    private float previusX;
 
 
     // Start is called before the first frame update
@@ -40,9 +37,8 @@ public class MainCharacterMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         gameManager = GameObject.FindGameObjectWithTag("GameController");
         scriptManager = gameManager.GetComponent<GameManager>();
-        points = 0;
-        previusX = player.position.x;
-        PlayerPrefs.SetInt("teste", 10);
+       
+        
         //state = floor;
     }
 
@@ -90,18 +86,19 @@ public class MainCharacterMovement : MonoBehaviour
         }
         if (!ReturnAnim())
         {
-            moveSpeed = moveSpeedBase;
-            Vector2 movement = new Vector2(dirX * moveSpeed * scriptManager.GetKarma(), player.velocity.y);
+            //moveSpeed = moveSpeedBase;
+            Vector2 movement = new Vector2(dirX * (moveSpeedBase + maxMoveSpeed *(scriptManager.GetKarma() / scriptManager.GetMaxKarma())), player.velocity.y);
             player.velocity = movement;
         }
     }
     
     void Update(){
-        KeyInputs();
-        countPoints();
-        if(player.position.y < -50){
-            DeadPlayer();
+        if(scriptManager.GetKarma() > scriptManager.GetMaxKarma() * 2 / 3){
+            SuperKeyInputs();
+        } else {
+            KeyInputs();
         }
+               
     }
     private void OnCollisionStay2D(Collision2D other) {
         
@@ -109,6 +106,7 @@ public class MainCharacterMovement : MonoBehaviour
             state = floor;
             anim.SetBool("isJumping", false);
             anim.SetFloat("speedMultiplier", 1000f);
+            doubleJump = true;
             
             
         }
@@ -152,6 +150,55 @@ public class MainCharacterMovement : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.Space)) isJumping = false;
     }
 
+    private void SuperKeyInputs(){
+        if(Input.GetKeyDown(KeyCode.Space) && state == floor && doubleJump == true){
+            if (!ReturnAnim())
+            {
+                isJumping = true;
+                state = air;
+                anim.SetBool("isWalking", false);
+                anim.SetBool("isJumping", true);
+                //anim.SetTrigger("Jump");
+                player.velocity = Vector2.up * jumpForce;
+                jumpTimeCounter = jumpTime;
+            }
+            
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space) && state == floor && doubleJump == false){
+            if (!ReturnAnim())
+            {
+                isJumping = true;
+                state = air;
+                anim.SetBool("isWalking", false);
+                anim.SetFloat("speedMultiplier", 1f);
+                anim.SetBool("isJumping", true);
+                //anim.SetTrigger("Jump");
+                player.velocity = Vector2.up * jumpForce;
+                jumpTimeCounter = jumpTime;
+            }
+            
+        }
+
+        if(Input.GetKey(KeyCode.Space) && isJumping == true){
+            if(jumpTimeCounter > 0){
+                player.velocity = Vector2.up * jumpForce;
+                jumpTimeCounter -= Time.deltaTime;
+            } else {
+                isJumping = false;
+            }
+        }
+
+        if(Input.GetKeyUp(KeyCode.Space) && doubleJump == false) isJumping = false;
+
+        if(Input.GetKeyUp(KeyCode.Space) && doubleJump == true){
+            state = floor;
+            anim.SetBool("isJumping", false);
+            anim.SetFloat("speedMultiplier", 1000f);
+            doubleJump = false;     
+        }
+    }
+
     private bool ReturnAnim()
     {
         if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("PlayerDamage"))
@@ -178,28 +225,5 @@ public class MainCharacterMovement : MonoBehaviour
         }
     }
 
-    private void countPoints(){
-        float x;
-        if(player.position.x > previusX){
-            previusX = player.position.x;
-            x = previusX / 10;
-            points = (int) x;
-            txtPoints.text = "Pontos: " + points.ToString();
-        }
         
-    }
-
-    private void DeadPlayer(){
-        if(PlayerPrefs.HasKey("points")){
-            if(PlayerPrefs.GetInt("points") < points){
-                PlayerPrefs.SetInt("points", points);
-            }
-        } else {
-            PlayerPrefs.SetInt("points", points);
-        }
-        PlayerPrefs.Save();
-
-        SceneManager.LoadScene("Menu");
-
-    }
 }
