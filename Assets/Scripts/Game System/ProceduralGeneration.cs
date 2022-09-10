@@ -66,7 +66,7 @@ public class ProceduralGeneration : MonoBehaviour
         Debug.Log("minWidth= " + minWidth + " maxWidth= " + maxWidth + " TilemapSize= " + GetComponentInChildren<Tilemap>().size.x);
         int ranValue;
         ranValue = Random.Range(1, 20);
-        if(ranValue <= 10)
+        if(ranValue <= 13)
         {
             Generator(minWidth, maxWidth, newMinHeight, newMaxHeight, newRepeatNum);
             return maxWidth;
@@ -154,7 +154,7 @@ public class ProceduralGeneration : MonoBehaviour
     private void SpawnEnemy(Vector3Int pos)
     {
         var ran = Random.Range(1, 10);
-        if(ran <= 1)
+        if(ran <= 3)
         {
             Vector3Int multi = new Vector3Int(1, 5, 0);
             Vector3Int enemyPos = pos * multi;
