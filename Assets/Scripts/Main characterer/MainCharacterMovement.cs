@@ -105,6 +105,7 @@ public class MainCharacterMovement : MonoBehaviour
         if(other.gameObject.tag == "Ground" && player.velocity.y < 1 && player.velocity.y > -1 ) {
             state = floor;
             anim.SetBool("isJumping", false);
+            anim.SetBool("isDoubleJumping", false);
             anim.SetFloat("speedMultiplier", 1000f);
             doubleJump = true;
             
@@ -172,7 +173,7 @@ public class MainCharacterMovement : MonoBehaviour
                 state = air;
                 anim.SetBool("isWalking", false);
                 anim.SetFloat("speedMultiplier", 1f);
-                anim.SetBool("isJumping", true);
+                anim.SetBool("isDoubleJumping", true);
                 //anim.SetTrigger("Jump");
                 player.velocity = Vector2.up * jumpForce;
                 jumpTimeCounter = jumpTime;
@@ -182,6 +183,7 @@ public class MainCharacterMovement : MonoBehaviour
 
         if(Input.GetKey(KeyCode.Space) && isJumping == true){
             if(jumpTimeCounter > 0){
+                
                 player.velocity = Vector2.up * jumpForce;
                 jumpTimeCounter -= Time.deltaTime;
             } else {
@@ -193,7 +195,7 @@ public class MainCharacterMovement : MonoBehaviour
 
         if(Input.GetKeyUp(KeyCode.Space) && doubleJump == true){
             state = floor;
-            anim.SetBool("isJumping", false);
+            anim.SetBool("isJumping", false);  
             anim.SetFloat("speedMultiplier", 1000f);
             doubleJump = false;     
         }

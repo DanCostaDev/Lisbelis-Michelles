@@ -19,21 +19,6 @@ public class EnemyMovement : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "PlatformEnd")
-        {
-            direction *= -1;
-            if (GetComponent<SpriteRenderer>().flipX)
-            {
-                GetComponent<SpriteRenderer>().flipX = false;
-            }else
-            {
-                GetComponent<SpriteRenderer>().flipX = true;
-            }
-        }
-    }
-
 
     // Update is called once per frame
     void Update()

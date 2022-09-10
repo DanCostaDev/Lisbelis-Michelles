@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 86b707e6175f89b40b01f1515af9b63e
+guid: c1319c1ce9393694085b63537316a77d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,28 +104,28 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: olafjump0000_0
+      name: pulo_duplo0000_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.661476, y: 0.2808536}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b23fac9d1d48d541890c5bc99a2afb4
-      internalID: 1727567872
+      spriteID: 4beb806c160617249bab9bfe940437b6
+      internalID: -1411816687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: olafjump0000_1
+      name: pulo_duplo0000_1
       rect:
         serializedVersion: 2
         x: 64
@@ -133,20 +133,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.3961937, y: 0.4077278}
+      pivot: {x: 0.661476, y: 0.2808536}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c40070fc38189b42b75d357a60a41af
-      internalID: -1945423265
+      spriteID: cece20bce58f1e148a7d410fec5f8125
+      internalID: 2024394916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: olafjump0000_2
+      name: pulo_duplo0000_2
       rect:
         serializedVersion: 2
         x: 128
@@ -154,14 +154,77 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.3961937, y: 0.4077278}
+      pivot: {x: 0.661476, y: 0.2808536}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b649427937b2d964ca57a1b28bd1bd10
-      internalID: -624962312
+      spriteID: 293cbf691cc64a742aac2584a010a619
+      internalID: -1591411805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulo_duplo0000_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.661476, y: 0.2808536}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e44ed7d9106a2545be6da8af8931e94
+      internalID: 1348465671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulo_duplo0000_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.661476, y: 0.2808536}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3aa71eeed64b374f978a0b184da0b93
+      internalID: 1828396246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulo_duplo0000_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.661476, y: 0.2808536}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 915bd04767a241245a34448488d83faa
+      internalID: 541039362
       vertices: []
       indices: 
       edges: []
@@ -177,9 +240,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      olafjump0000_0: 1727567872
-      olafjump0000_2: -624962312
-      olafjump0000_1: -1945423265
+      pulo_duplo0000_1: 2024394916
+      pulo_duplo0000_2: -1591411805
+      pulo_duplo0000_3: 1348465671
+      pulo_duplo0000_5: 541039362
+      pulo_duplo0000_4: 1828396246
+      pulo_duplo0000_0: -1411816687
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
