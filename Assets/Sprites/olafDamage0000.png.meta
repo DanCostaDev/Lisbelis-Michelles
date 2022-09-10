@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 86b707e6175f89b40b01f1515af9b63e
+guid: 267fda11af66b7f4cb4b02cac4da1838
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,10 +104,31 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: olafjump0000_0
+      name: olafDamage0000_0
       rect:
         serializedVersion: 2
         x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.48269895, y: 0.37312555}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bdb8d9be7e9bb94e9a81dfad7073a03
+      internalID: 1853999262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: olafDamage0000_1
+      rect:
+        serializedVersion: 2
+        x: 64
         y: 0
         width: 64
         height: 64
@@ -118,35 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b23fac9d1d48d541890c5bc99a2afb4
-      internalID: 1727567872
+      spriteID: 7811ea4c9f1d4b24397d2cb00d054099
+      internalID: 1789311941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: olafjump0000_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.3961937, y: 0.4077278}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7c40070fc38189b42b75d357a60a41af
-      internalID: -1945423265
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: olafjump0000_2
+      name: olafDamage0000_2
       rect:
         serializedVersion: 2
         x: 128
@@ -154,14 +154,14 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.3961937, y: 0.4077278}
+      pivot: {x: 0.4250288, y: 0.37312555}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b649427937b2d964ca57a1b28bd1bd10
-      internalID: -624962312
+      spriteID: 595488106cbb7b54da8b284fc0805213
+      internalID: 9287426
       vertices: []
       indices: 
       edges: []
@@ -177,9 +177,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      olafjump0000_0: 1727567872
-      olafjump0000_2: -624962312
-      olafjump0000_1: -1945423265
+      olafDamage0000_2: 9287426
+      olafDamage0000_1: 1789311941
+      olafDamage0000_0: 1853999262
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

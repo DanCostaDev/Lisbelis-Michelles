@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private float karma = 1f;
+    [SerializeField] public float karma = 1f;
     [SerializeField] private float maxKarma;
     //private Image karmaBar;
     public KarmaBar karmaBar;
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        increaseKarma(0.001f);
+        //increaseKarma(0.001f);
     }
 
     public float GetKarma()
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     public void increaseKarma(float value)
     {
         int karmaInt;
-        if(karma < maxKarma)
+        if(karma <= maxKarma)
         {
             karma += value;
             karma = Mathf.Clamp(karma, 1, maxKarma);

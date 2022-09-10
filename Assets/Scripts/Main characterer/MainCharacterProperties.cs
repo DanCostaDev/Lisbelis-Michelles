@@ -10,6 +10,7 @@ public class MainCharacterProperties : MonoBehaviour
     private Animator anim;
 
     [SerializeField] private GameObject inimigo;
+    [SerializeField] private GameManager scriptManager;
 
     //public GameObject platformEnd;
 
@@ -18,7 +19,7 @@ public class MainCharacterProperties : MonoBehaviour
     {
         player = GetComponent<Rigidbody2D>();
         hitBox = GetComponent<BoxCollider2D>();
-        
+        scriptManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         enemy = GameObject.FindGameObjectWithTag("Enemy");
         //if(enemy != null)
         //{
@@ -34,9 +35,11 @@ public class MainCharacterProperties : MonoBehaviour
 
     public void TakeDamage(int value, Vector2 knockBack)
     {
-        GetComponent<Rigidbody2D>().AddForce(knockBack, ForceMode2D.Force);
+        scriptManager.increaseKarma(-1 * scriptManager.karma);
+        GetComponent<Rigidbody2D>().AddForce(knockBack * new Vector2(1200, 1));
         GetComponent<Animator>().SetBool("isWalking", false);
         GetComponent<Animator>().SetTrigger("Damage");
+        
     }
 
 }
