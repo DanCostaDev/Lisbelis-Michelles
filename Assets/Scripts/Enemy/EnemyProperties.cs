@@ -9,7 +9,6 @@ public class EnemyProperties : MonoBehaviour
     [SerializeField] private int health = 2;
     [SerializeField] private float collisionRange = 2.2f;
     [SerializeField] private Collider2D[] colliderPlayer;
-    [SerializeField] Vector2 force;
 
     private float attackRate = 1f;
     private float nextAttackTime = 0f;
@@ -39,21 +38,13 @@ public class EnemyProperties : MonoBehaviour
 
         foreach (Collider2D playerCollider in colliderPlayer)
         {
-            if(playerCollider.gameObject.tag == "Player" && !GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("SkeletonDeath"))
+            if(playerCollider.gameObject.tag == "Player")
             {
                 if (Time.time > nextAttackTime)
                 {
                     Vector2 difference = (playerCollider.transform.position - gameObject.transform.GetChild(0).transform.position).normalized;
-                    if(difference.x < 0)
-                    {
-                        force = new Vector2(-1, 1);
-                    }
-                    else
-                    {
-                        force = new Vector2(1, 1);
-                    }
-
-                    Debug.Log("player entrou = " + difference + " " + force);
+                    Vector2 force = difference * 50f;
+                    Debug.Log("player entrou");
                     player.GetComponent<MainCharacterProperties>().TakeDamage(1, force);
                     nextAttackTime = Time.time + 2f / (attackRate);
                 }                
@@ -65,8 +56,7 @@ public class EnemyProperties : MonoBehaviour
     {
         GetComponent<Animator>().SetBool("isWalking", false);
         GetComponent<Animator>().SetTrigger("Damage");
-        Vector2 difference = (gameObject.transform.GetChild(0).transform.position - player.transform.position).normalized;
-        GetComponent<Rigidbody2D>().AddForce(new Vector2(1500, 100) * difference);
+        GetComponent<Rigidbody2D>().AddForce(new Vector2(20, 1));
         health -= value;
         if(health == 0)
         {
@@ -74,6 +64,7 @@ public class EnemyProperties : MonoBehaviour
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<EnemyMovement>().enabled = false;
             GetComponent<Animator>().SetTrigger("Death");
+            Death();
         }
     }
 
