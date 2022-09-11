@@ -18,6 +18,7 @@ public class PlayerDeath : MonoBehaviour
 
     
     public void DeadPlayer(){
+        PlayerPrefs.SetInt("lastPoints", points.ReturnPoints());
         if(PlayerPrefs.HasKey("points")){
             if(PlayerPrefs.GetInt("points") < points.ReturnPoints()){
                 PlayerPrefs.SetInt("points", points.ReturnPoints());
@@ -27,7 +28,7 @@ public class PlayerDeath : MonoBehaviour
         }
         PlayerPrefs.Save();
 
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Dead");
 
     }
 }

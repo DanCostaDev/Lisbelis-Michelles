@@ -9,6 +9,7 @@ public class PlayerAttack : MonoBehaviour
     private GameManager scriptManager;
     private float attackRate = 2f;
     private float nextAttackTime = 0f;
+    public AudioSource audio;
 
     public Transform attackPointRight;
     public Transform attackPointLeft;
@@ -59,7 +60,7 @@ public class PlayerAttack : MonoBehaviour
         {
             scriptManager.increaseKarma(0.5f);
             enemy.GetComponent<EnemyProperties>().TakeDamage(1);
-            Debug.Log("Hit enemy");
+            audio.Play();
         }
 
     }

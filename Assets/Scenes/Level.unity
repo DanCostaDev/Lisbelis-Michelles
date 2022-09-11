@@ -1475,13 +1475,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 794318603765913716, guid: 9bb0392c93bd319409fca9b2b36bf5b0, type: 3}
+      propertyPath: playerDeath
+      value: 
+      objectReference: {fileID: 2112647486}
     - target: {fileID: 794318603765913718, guid: 9bb0392c93bd319409fca9b2b36bf5b0, type: 3}
       propertyPath: maxSpeed
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 794318603765913718, guid: 9bb0392c93bd319409fca9b2b36bf5b0, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 794318603765913718, guid: 9bb0392c93bd319409fca9b2b36bf5b0, type: 3}
       propertyPath: currentSpeed
@@ -1569,6 +1573,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3649567758175794706, guid: 4d16e35e0c7e18f40ada929680f097f8, type: 3}
+      propertyPath: maxLife
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649567758175794706, guid: 4d16e35e0c7e18f40ada929680f097f8, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1147339576}
+    - target: {fileID: 3649567758175794706, guid: 4d16e35e0c7e18f40ada929680f097f8, type: 3}
+      propertyPath: playerDeath
+      value: 
+      objectReference: {fileID: 2112647486}
+    - target: {fileID: 3649567758175794706, guid: 4d16e35e0c7e18f40ada929680f097f8, type: 3}
+      propertyPath: scriptManager
+      value: 
+      objectReference: {fileID: 2112647484}
     - target: {fileID: 3649567758175794710, guid: 4d16e35e0c7e18f40ada929680f097f8, type: 3}
       propertyPath: txtPoints
       value: 

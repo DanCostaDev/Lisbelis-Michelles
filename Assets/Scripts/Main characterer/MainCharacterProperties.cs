@@ -9,6 +9,12 @@ public class MainCharacterProperties : MonoBehaviour
     private GameObject enemy;
     private Animator anim;
 
+    [SerializeField] private float maxLife;    
+    [SerializeField] private float life;
+    private int intPart;
+    public HealthBar healthBar;
+    [SerializeField] private PlayerDeath playerDeath;
+
     [SerializeField] private GameObject inimigo;
     [SerializeField] private GameManager scriptManager;
 
@@ -21,6 +27,10 @@ public class MainCharacterProperties : MonoBehaviour
         hitBox = GetComponent<BoxCollider2D>();
         scriptManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         enemy = GameObject.FindGameObjectWithTag("Enemy");
+        life = maxLife;
+        intPart = (int) life;
+        healthBar.SetMaxHealth(intPart);
+        healthBar.SetHealth(intPart);
         //if(enemy != null)
         //{
         //    Physics2D.IgnoreCollision(hitBox, enemy.GetComponent<BoxCollider2D>());
@@ -39,7 +49,12 @@ public class MainCharacterProperties : MonoBehaviour
         GetComponent<Rigidbody2D>().AddForce(knockBack * new Vector2(1200, 1));
         GetComponent<Animator>().SetBool("isWalking", false);
         GetComponent<Animator>().SetTrigger("Damage");
-        
+        life = life - value;
+        intPart = (int) life;
+        healthBar.SetHealth(intPart);
+        if(life <= 0){
+            playerDeath.DeadPlayer();
+        }
     }
 
 }
