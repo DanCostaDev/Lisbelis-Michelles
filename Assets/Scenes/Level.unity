@@ -245,10 +245,10 @@ RectTransform:
   m_Father: {fileID: 1147339574}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -11.430603, y: 0.027450562}
-  m_SizeDelta: {x: 186.2908, y: 44.7134}
+  m_SizeDelta: {x: 28.290802, y: 10.713402}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &467477959
 MonoBehaviour:
@@ -529,28 +529,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 525626379}
     m_ColliderPaths:
-    - - X: -10000100
-        Y: 250000041
-      - X: -10000100
-        Y: 239999959
-      - X: -10000041
-        Y: 239999900
-      - X: 60000041
-        Y: 239999900
-      - X: 60000100
-        Y: 239999959
-      - X: 60000100
-        Y: 250000041
-      - X: 60000041
-        Y: 250000100
-      - X: -10000041
-        Y: 250000100
+    - - X: -10000000
+        Y: 240000000
+      - X: 60000000
+        Y: 240000000
+      - X: 60000000
+        Y: 250000000
+      - X: -10000000
+        Y: 250000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 5.9999747, y: 23.99999}
-      - {x: 5.9999747, y: 25.00001}
-      - {x: -1.00001, y: 24.999975}
-      - {x: -0.9999748, y: 23.99999}
+    - - {x: 5.999971, y: 24}
+      - {x: 5.999971, y: 25}
+      - {x: -1, y: 24.999971}
+      - {x: -0.99997073, y: 24}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &525626378
@@ -736,7 +728,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.00024986267}
+  m_AnchoredPosition: {x: 0, y: 0.00025177002}
   m_SizeDelta: {x: 0, y: -0.0005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &886181452
@@ -760,10 +752,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 76451fb9e6bcabb4a9a4d6f0827a1e14, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -812,8 +804,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1.3029175, y: -0.44421387}
-  m_SizeDelta: {x: 98.79974, y: 120.60268}
+  m_AnchoredPosition: {x: 0.45889282, y: 0.055786133}
+  m_SizeDelta: {x: 102.1046, y: 131.6027}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &887318654
 MonoBehaviour:
@@ -1116,10 +1108,10 @@ RectTransform:
   m_Father: {fileID: 1059765211}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -313.58545, y: 144.02255}
-  m_SizeDelta: {x: 158.1106, y: 33.3887}
+  m_AnchorMin: {x: 0.039368547, y: 0.82920295}
+  m_AnchorMax: {x: 0.224, y: 0.90720296}
+  m_AnchoredPosition: {x: -2.5854492, y: 2.0225525}
+  m_SizeDelta: {x: 2.1105957, y: 3.3887024}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1147339575
 MonoBehaviour:
@@ -1566,10 +1558,10 @@ RectTransform:
   m_Father: {fileID: 1059765211}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -314.08997, y: 90}
-  m_SizeDelta: {x: 156.71002, y: 42.79001}
+  m_AnchorMin: {x: 0.035815727, y: 0.6796015}
+  m_AnchorMax: {x: 0.21926291, y: 0.7876015}
+  m_AnchoredPosition: {x: 0.41003418, y: 0}
+  m_SizeDelta: {x: 1.710022, y: 0.79000854}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1811308534
 MonoBehaviour:
@@ -1879,6 +1871,10 @@ PrefabInstance:
       propertyPath: audio
       value: 
       objectReference: {fileID: 749126160}
+    - target: {fileID: 1109128089403645952, guid: 4d16e35e0c7e18f40ada929680f097f8, type: 3}
+      propertyPath: points
+      value: 
+      objectReference: {fileID: 2112647487}
     - target: {fileID: 3649567758175794706, guid: 4d16e35e0c7e18f40ada929680f097f8, type: 3}
       propertyPath: maxLife
       value: 5

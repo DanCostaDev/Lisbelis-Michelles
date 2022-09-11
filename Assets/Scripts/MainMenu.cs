@@ -12,4 +12,12 @@ public class MainMenu : MonoBehaviour
     public void QuitGame(){
         Application.Quit();
     }
+
+    public void BackToMenu(){
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void HowToPlay(){
+        SceneManager.LoadScene("HowToPlay");
+    }
 }

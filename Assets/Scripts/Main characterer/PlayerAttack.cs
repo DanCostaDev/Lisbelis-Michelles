@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     private Animator anim;
     private GameObject gameManager;
     private GameManager scriptManager;
+    private Points points;
     private float attackRate = 2f;
     private float nextAttackTime = 0f;
     public AudioSource audio;
@@ -15,6 +16,7 @@ public class PlayerAttack : MonoBehaviour
     public Transform attackPointLeft;
     public LayerMask enemyLayers;
     public float attackRange;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,7 @@ public class PlayerAttack : MonoBehaviour
         anim = GetComponent<Animator>();
         gameManager = GameObject.FindGameObjectWithTag("GameController");
         scriptManager = gameManager.GetComponent<GameManager>();
+        points = gameManager.GetComponent<Points>();
     }
 
     // Update is called once per frame
@@ -58,9 +61,10 @@ public class PlayerAttack : MonoBehaviour
 
         foreach(Collider2D enemy in hitEnemies)
         {
-            scriptManager.increaseKarma(0.5f);
+            scriptManager.increaseKarma(1f);
             enemy.GetComponent<EnemyProperties>().TakeDamage(1);
             audio.Play();
+            points.addPoints(5);
         }
 
     }

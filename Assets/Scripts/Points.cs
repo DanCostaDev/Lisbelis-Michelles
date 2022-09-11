@@ -36,6 +36,10 @@ public class Points : MonoBehaviour
         
     }
 
+    public void addPoints(int pts){
+        points = points + pts;
+    }
+
     public int ReturnPoints(){
         return points;
     }
